@@ -13,11 +13,14 @@ function App() {
     setitem(e.target.value);
   };
   const addItem = () => {
-    setnewItem((preVal) => {
-      return [...preVal, item];
-    });
-    setitem("");
+    if (item.trim() !== "") {
+      setnewItem((preVal) => {
+        return [...preVal, item];
+      });
+      setitem("");
+    }
   };
+
   return (
     <Box className="w-full h-screen bg-green-300 flex flex-row justify-center items-center text-center">
       <Box className="w-1/4 h-4/5 bg-white shadow-md rounded-lg flex flex-col gap-10 ">
